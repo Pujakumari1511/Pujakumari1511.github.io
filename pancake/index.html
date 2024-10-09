@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pancake Maker</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="image-container">
+        <img src="pancake.jpeg" alt="Delicious pancakes" />
+        <div class="price-banner"><span id="price-banner">€5</span></div>
+      </div>
+      
+      <div class="form-container">
+        <h2>Customize Your Pancake</h2>
+        <div class="customization-section">
+          <label for="type">Choose your pancake type:</label>
+          <select id="type">
+            <option value="5">Classic - €5</option>
+            <option value="6">Chocolate - €6</option>
+            <option value="7">Blueberry - €7</option>
+          </select>
+        </div>
+        <div class="customization-section">
+          <p>Select your toppings (€1 each):</p>
+          <input type="checkbox" name="toppings" id="nuts" value="1">
+          <label for="nuts">Nuts</label><br />
+
+          <input type="checkbox" name="toppings" id="bananas" value="1">
+          <label for="bananas">Bananas</label><br />
+          
+          <input type="checkbox" name="toppings" id="syrup" value="1">
+          <label for="syrup">Syrup</label><br />
+
+        </div>
+        <div class="customization-section">
+          <p>Add extras:</p>
+          <input type="checkbox" name="extras" id="whippedCream" value="2">
+          <label for="whippedCream">Whipped Cream - €2</label><br />
+
+          <input type="checkbox" name="extras" id="iceCream" value="3">
+          <label for="iceCream">Ice Cream - €3</label><br />
+        </div>
+
+        <div class="delivery-method">
+        <h3>Choose the delivery method:</h3>
+
+        <input type="radio" name="que" id="eatin" value="Eat In">
+        <label for="eatin">Eat In</label>
+
+        <input type="radio" name="que" id="pickup" value="Pick Up">
+        <label for="pickup">Pick Up</label>
+
+        <input type="radio" name="que" id="delivery" value="5">
+        <label for="delivery">Delivery - €5</label>
+        
+        </div>
+        
+
+        <div id="price-display">
+          <h3>Total Price: <span id="totalPrice">€5</span></h3>
+        </div>
+        <div id="userName">
+          <input type="text" name="fullname" id="customerName" placeholder="Enter your name">
+          <button type="button" id="seeOrder">See order</button>
+        </div>
+        <div class="orderDetails" id="customer">
+        
+      </div>
+
+     
+        
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
