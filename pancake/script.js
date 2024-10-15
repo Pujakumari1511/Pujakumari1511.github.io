@@ -23,12 +23,21 @@ const deliveryMethod = document.querySelectorAll('input [name="que"]:checked').v
 function updatePrice(price) {
     const priceBanner = document.getElementsByClassName("price-banner")[0]
     const totalPrice = document.getElementById("totalPrice")
-    priceBanner.textContent = "$" + price
-    totalPrice.textContent = "$" + price
-    priceBanner.style.animation = "none";
-    priceBanner.offsetHeight;
-    priceBanner.style.animation = "price-banner-animation 1s"
+    priceBanner.textContent = "€" + price
+    totalPrice.textContent = "€" + price
+
+    const priceBannerAnimation = [
+        { transform: "scale(1)" },
+        { transform: "scale(1.5)" },
+        { transform: "scale(1)" }
+    ];
+
+    const priceBannerTiming = {
+        duration: 500,
+        iteration: 1,
+    };
     
+    priceBanner.animate(priceBannerAnimation, priceBannerTiming);
 }
 
 let checkbox;

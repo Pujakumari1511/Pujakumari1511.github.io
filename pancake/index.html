@@ -14,7 +14,7 @@
     
     <div class="container">
       <div class="image-container">
-        <img src="pancake.jpeg" alt="Delicious pancakes" />
+        <img src="pancake1.png" alt="Delicious pancakes" />
         <div class="price-banner"><span id="price-banner">€5</span></div>
       </div>
       
@@ -30,37 +30,43 @@
         </div>
         <div class="customization-section">
           <p>Select your toppings (€1 each):</p>
-          <input type="checkbox" name="toppings" id="nuts" value="1">
-          <label for="nuts">Nuts</label><br />
+          <div class="toppings-container">
+            <input type="checkbox" name="toppings" id="nuts" value="1">
+            <label for="nuts">Nuts</label><br />
 
-          <input type="checkbox" name="toppings" id="bananas" value="1">
-          <label for="bananas">Bananas</label><br />
+            <input type="checkbox" name="toppings" id="bananas" value="1">
+            <label for="bananas">Bananas</label><br />
           
-          <input type="checkbox" name="toppings" id="syrup" value="1">
-          <label for="syrup">Syrup</label><br />
+            <input type="checkbox" name="toppings" id="syrup" value="1">
+            <label for="syrup">Syrup</label><br />
+          </div>
+          
 
         </div>
         <div class="customization-section">
           <p>Add extras:</p>
-          <input type="checkbox" name="extras" id="whippedCream" value="2">
-          <label for="whippedCream">Whipped Cream - €2</label><br />
-
-          <input type="checkbox" name="extras" id="iceCream" value="3">
-          <label for="iceCream">Ice Cream - €3</label><br />
+          <div class="extras-container">
+            <input type="checkbox" name="extras" id="whippedCream" value="2">
+            <label for="whippedCream">Whipped Cream - €2</label><br />
+  
+            <input type="checkbox" name="extras" id="iceCream" value="3">
+            <label for="iceCream">Ice Cream - €3</label><br />
+          </div>
+          
         </div>
 
         <div class="delivery-method">
-        <h3>Choose the delivery method:</h3>
+          <h3>Choose the delivery method:</h3>
+          <div class="delivery-container">
+            <input type="radio" name="que" id="eatin" value="Eat In">
+            <label for="eatin">Eat In (No charge)</label><br>
 
-        <input type="radio" name="que" id="eatin" value="Eat In">
-        <label for="eatin">Eat In</label>
+            <input type="radio" name="que" id="pickup" value="Pick Up">
+            <label for="pickup">Pick Up (No charge)</label><br>
 
-        <input type="radio" name="que" id="pickup" value="Pick Up">
-        <label for="pickup">Pick Up</label>
-
-        <input type="radio" name="que" id="delivery" value="5">
-        <label for="delivery">Delivery - €5</label>
-        
+            <input type="radio" name="que" id="delivery" value="5">
+            <label for="delivery">Delivery - €5</label>
+          </div>
         </div>
         
 

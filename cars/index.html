@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Car form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Search car by license number start -->
+    <hr class="line1">
+    <div class="search-container">
+        <header>
+            <h2>Search car by license number</h2>
+        </header>
+
+        <div id="search-car-license">
+            <div class="searchNumber">
+                <form name="searchNumber" id="searchCarNumber">
+                    <label for="licenseNumber">License Number </label>
+                    <input type="text" name="licenseNumber" id="licenseNumber" maxlength="10" required>
+                    <div>
+                    <button type="submit" id="search-button" class="form-button">Search</button>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="car-license" id="search-result"></div>
+        </div>
+    </div>
+
+      <!-- Search car by license number end -->
+   
+
+    <hr class="line2">
+
+    <!-- Container of form -->
+
+    <main class="grid-container">
+        <div id="message"></div>
+        <div class="car-form">
+            <h2>Insert car data</h2>
+
+            <!-- form start-->
+            <form name="carForm" id="addcarform">
+                <div class="form-row">
+                    <label class="required" for="licensePlate">License</label><br>
+                    <input type="text" name="licensePlate" id="licensePlate" maxlength="10" minlength="3" required>
+                </div>
+                
+                <div class="form-row">
+                    <label class="required" for="maker">Maker</label><br>
+                    <input type="text" name="maker" id="maker" maxlength="20" minlength="3" required>
+                </div>
+               
+                <div class="form-row">
+                    <label class="required" for="model">Model</label><br>
+                    <input type="text" name="model" id="model" maxlength="20" minlength="3" required>
+                </div>
+                
+                <div class="form-row">
+                    <label class="required" for="CurrentOwner">Current Owner</label><br>
+                    <input type="text" name="CurrentOwner" id="currentOwner" maxlength="30" required>
+                </div>
+
+                
+                <div class="form-row">
+                    <label class="required" for="price">Price</label><br>
+                    <input type="number" name="price" id="price" min=0 required>
+                </div>
+
+                <div class="form-row">
+                    <label class="required" for="year">Year</label><br>
+                    <select name="year" id="year" required>
+                        <option value="">Select Year</option>
+                    </select>
+                </div>
+                   
+                
+                <div class="form-row">
+                    <label for="color">Color</label><br>
+                    <input type="color" id="color" value="#fff000" >
+                </div>        
+
+                <button type="submit" id="addCar" class="form-button">Add car</button>
+                <button type="reset" class="form-button">Reset</button>
+            </form>
+
+            <!-- form end-->
+        </div>
+
+        <!-- car table start -->
+        <div class="car-table">
+            <h2>Car database</h2>
+            <table id="carDatabase">
+                <tr>
+                    <th>License Plate</th>
+                    <th>Maker</th>
+                    <th>Model</th>
+                    <th>Current Owner</th>
+                    <th>Price</th>
+                    <th>Color</th>
+                    <th>Year</th>
+                    <th>Discounted price</th>
+                    <th>Delete car</th>
+                </tr>
+
+            </table>
+        </div>
+         <!-- car table end -->
+
+    </main>
+    <!-- Container of form end -->
+
+    <footer>Copyright &copy REACT24S</footer>
+
+    <div class="carDatabase"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

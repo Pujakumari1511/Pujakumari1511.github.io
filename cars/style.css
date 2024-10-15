@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0dade3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+hr.line1 {
+    height: 30px;
+    border-width: 0px;
+}
+
+
+
+
+/* Search car start */
+
+.search-container{
+    background: whitesmoke;
+    padding-bottom: 20px;
+    margin: 0 70px;
+    border-radius: 10px;
+}
+
+header {
+    padding-top: 30px;
+    margin-left: 25px;
+}
+
+header h2 {
+    padding-bottom: 50px;
+}
+
+#search-car-license {
+    margin-left: 25px;
+
+    @media (min-width: 701px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.searchNumber label {
+    display: inline;
+    font-size: 15px;
+    margin-right: 50px;
+      
+}
+
+.searchNumber input {
+    height: 50px;
+    width: 40%;
+    margin-top: 20px;
+    border: 1px solid black;
+
+}
+
+#search-result {
+    display: inline;
+    line-height: 25px;  
+    margin-top: 20px;
+}
+
+/* Search car end */
+
+hr.line2 {
+    height: 50px;
+    border-width: 0px;
+}
+
+/* form start */
+
+main {
+    justify-items: center;
+    margin: 0 20px;
+    @media (min-width: 701px) {
+        display: grid;
+        grid-template-columns: 0.75fr 2fr;
+        gap: 20px;
+    }
+    
+}
+
+main h2 {
+    padding-bottom: 15px;
+}
+
+.car-form {
+    background: whitesmoke;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.carForm h2 {
+    display: inline;
+    column-gap: 30px;
+}
+
+.form-row {
+    height: 50px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.required::after {
+    content: "*";
+    color: red;
+}
+
+.form-row input, select {
+    height: 100%;
+    width: 50%;
+    margin-top: 10px;
+    border: 1px solid black;
+}
+
+.form-row label{
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.form-button {
+    background-color: rgba(9, 152, 235, 0.895);
+    color: white;
+    width: 100px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 20px;    
+}
+/* form end */
+
+.car-table {
+    background: whitesmoke;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: rgb(14, 175, 228);  
+    color: white;
+    height: 50px; 
+    padding: 10px;
+    
+}
+
+table, td {
+    height: 40px;
+}
+
+td, th {
+    border: 1px solid #bcb8b8;
+    text-align: left;
+    word-break: break-all;
+    padding: 8px;
+}
+
+td .delete-button {
+    background-color: inherit;
+    color: black;
+    width: 100px;
+    height: 45px;
+    border: none;
+    font-size: 20px;
+    word-break: break-all;  
+}
+
+td .color-box {
+    border: 1px solid black;
+    height: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+#message {
+    margin-top: 1rem;
+    position: fixed;
+    top:1rem;
+    right:1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    visibility: hidden;
+    transition: visibility 0.3s ease;
+}
+
+#message.success {
+    background-color: #4caf50;
+    color: white;
+    visibility: visible;
+}
+
+#message.error {
+    background-color: red;
+    color: white;
+    visibility: visible;
+}
+
+footer {
+    color: white;
+    background-color: rgb(14, 175, 228);
+    height: 30px;
+    font-size: 10px;
+    text-align: center;
+    align-content: center;
+}
+
+
+@media (max-width: 700px) {
+    .searchNumber {
+        margin-bottom: 20px;
+    }
+
+    .form-row label {
+        width: 70%;
+    }
+
+    .form-row input, select {
+        width: 70%;
+    }
+
+    .car-table {
+        margin-top: 20px;
+    }
+}
