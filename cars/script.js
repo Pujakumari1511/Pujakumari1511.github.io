@@ -30,9 +30,9 @@ class Car {
 }
 
 
-class CarList{
-    constructor(){
-        this.cars = JSON.parse(localStorage.getItem(CARS_KEY)) || [];
+class CarTable{
+    constructor(carList){
+        this.carList = carList;
         this.#updateTable();
     }
     
@@ -41,7 +41,7 @@ class CarList{
             if (this.findCarByLicensePlate(newCar.licensePlate)) {
                 throw new Error(`The license plate ${licensePlate.value} already exist in the records`);
             }
-            this.cars.push(newCar);
+            this.carList.push(newCar);
             this.#saveCars();
             this.#updateTable();
             this.#displayMessage("Car added successfully!!");
@@ -51,15 +51,15 @@ class CarList{
     }
 
     findCarByLicensePlate(licensePlate) {
-        return this.cars.find(car => car.licensePlate == licensePlate);
+        return this.carList.find(car => car.licensePlate == licensePlate);
     }
 
     #saveCars(){
-        localStorage.setItem(CARS_KEY, JSON.stringify(this.cars));
+        localStorage.setItem(CARS_KEY, JSON.stringify(this.carList));
     }
 
     #deleteCar(index) {
-        this.cars.splice(index, 1);
+        this.carList.splice(index, 1);
         this.#saveCars();
         this.#updateTable();
         this.#displayMessage("Car deleted successfully!!");
@@ -69,7 +69,7 @@ class CarList{
         const table = document.querySelector("#carDatabase");
         table.innerHTML = table.rows[0].innerHTML;
     
-        this.cars.forEach((car, index) => {
+        this.carList.forEach((car, index) => {
             const row = table.insertRow(-1);
             Object.keys(car).forEach(key => {
                 const cell = row.insertCell(-1);
@@ -106,25 +106,13 @@ class CarList{
 
 // logic starts here
 
-const carList = new CarList();
-//const carsArry = JSON.parse(localStorage.getItem(CARS_KEY)) || [] ;
-const addCarForm = document.getElementById("addcarform");
+const carTable = new CarTable(JSON.parse(localStorage.getItem(CARS_KEY)) || []);
 
 // add options to year input field in add car form
 const selectYear = document.getElementById("year");
 for (let year = new Date().getFullYear(); year >= 1886; year--) {
     selectYear.options.add(new Option(year, year))
 }
-
-/* const displayMessage = (message, type = "success") => {
-    const messageElement = document.querySelector("#message");
-    messageElement.textContent = message;
-    messageElement.className = type;
-    setTimeout(() => {
-        messageElement.textContent = "";
-        messageElement.className = "";
-    }, 3000);
-} */
 
 function userInput(e){
     e.preventDefault();
@@ -144,97 +132,20 @@ function userInput(e){
         color.value,
         year.value);
 
-    carList.addCar(newCar);
-    addCarForm.reset();
-
-    /* try {
-        const licensePlate = document.getElementById("licensePlate")
-        const maker = document.getElementById("maker")
-        const model = document.getElementById("model")
-        const currentOwner = document.getElementById("currentOwner")
-        const price = document.getElementById("price")
-        const color = document.getElementById("color")
-        const year = document.getElementById("year")
-        
-
-        if (carsArry.find(car => car.licensePlate == licensePlate.value)){
-            throw new Error(`The license plate ${licensePlate.value} already exist in the records`);
-        }  
-        
-        let newCar = new Car(licensePlate.value,
-        maker.value.trim(),
-        model.value.trim(),
-        currentOwner.value.trim(),
-        price.value.trim(),
-        color.value,
-        year.value);
-
-        addCarForm.reset();
-        carsArry.push(newCar);
-        localStorage.setItem(CARS_KEY, JSON.stringify(carsArry));
-        displayTable();     
-        displayMessage("Car added successfully!!");
-        
-    } catch (error) {
-        displayMessage(error.message, "error")
-    }   */      
+    carTable.addCar(newCar);
+    addCarForm.reset();     
 };
 
-
-/* const displayTable = () => {
-    const table = document.querySelector("#carDatabase");
-    table.innerHTML = table.rows[0].innerHTML;
-
-    carsArry.forEach((car, index) => {
-        const row = table.insertRow(-1);
-        console.log(`index ${index}`);
-        Object.keys(car).forEach(key => {
-            const cell = row.insertCell(-1);
-            if (key == "color"){
-                const colorBox = document.createElement("div");
-                colorBox.classList.add("color-box")
-                colorBox.style.background = car[key];
-                cell.appendChild(colorBox)
-            } else {
-                cell.textContent = key == "price" || (key == "discountedPrice" && car[key] != "N/A")
-                ? "€" + Number(car[key]).toFixed(2) 
-                : car[key];
-            }
-        
-            
-
-        });
-
-        const deleteButton = document.createElement("span");
-        deleteButton.textContent = "Delete";
-        deleteButton.classList.add("delete-button");
-        deleteButton.addEventListener("click", () => deleteCar(index));
-        row.insertCell(-1).appendChild(deleteButton);
-    })
-}
-
-const deleteCar = (index) => {
-    carsArry.splice(index, 1);
-    localStorage.setItem(CARS_KEY, JSON.stringify(carsArry));
-    displayTable();
-    displayMessage("Car deleted successfully!!")
-} */
-
+const addCarForm = document.getElementById("addcarform");
 addCarForm.addEventListener("submit", userInput)
 
-// displayTable();
-
-console.log(carList);
-
 // Search license number
-// const searchButton = document.getElementById("search-button")
-
 
 function searchLicensehNumber(e){
     e.preventDefault();
     const licenseNumber = document.getElementById("licenseNumber").value.trim();
     const searchResult = document.getElementById("search-result");
-    const car = carList.findCarByLicensePlate(licenseNumber);
+    const car = carTable.findCarByLicensePlate(licenseNumber);
     if (car) {
         searchResult.innerHTML = "<p> License number: " + licenseNumber + "</p>" +
         "<p> Maker: " + car.maker + "</p>" +
@@ -249,7 +160,6 @@ function searchLicensehNumber(e){
 }
 
 const searchCarNumber = document.getElementById("searchCarNumber");
-
 searchCarNumber.addEventListener("submit", searchLicensehNumber);
 
 
