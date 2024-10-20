@@ -11,16 +11,18 @@ class Order{
 
 const orders = [];
 
-const pancakeType = document.querySelector("#type")
-const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
-const delivery = document.getElementById("delivery")
-const customerName = document.getElementById("customerName")
-const button = document.getElementById("seeOrder")
-const deliveryMethod = document.querySelectorAll('input [name="que"]:checked').value;
+const pancakeType = document.querySelector("#type");
+const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
+const deliveries = document.querySelectorAll('input[name="delivery"]');
+const customerName = document.getElementById("customerName");
+const button = document.getElementById("seeOrder");
+const orderDetails = document.getElementById("customer");
 
 
 
-function updatePrice(price) {
+
+function updatePrice() {
+    const price = calculatePrice();
     const priceBanner = document.getElementsByClassName("price-banner")[0]
     const totalPrice = document.getElementById("totalPrice")
     priceBanner.textContent = "€" + price
@@ -36,30 +38,31 @@ function updatePrice(price) {
         duration: 500,
         iteration: 1,
     };
-    
+    orderDetails.innerHTML = "";
     priceBanner.animate(priceBannerAnimation, priceBannerTiming);
 }
 
-let checkbox;
+
 function calculatePrice(){
     let sum = Number(pancakeType.value)
     
-    for (checkbox of checkBoxes){
+    for (let checkbox of checkBoxes){
         if (checkbox.checked){
             sum += Number(checkbox.value)
         }
     }
-    if (delivery.checked){
-        sum += Number(delivery.value)
+
+    for (let delivery of deliveries){
+        if (delivery.checked){
+            sum += Number(delivery.value);
+        }
     }
-    updatePrice(sum) 
+    return sum;
 } 
 
 
 
 function currentOrderDetails(){
-    
-    const orderDetails = document.getElementById("customer");
     
     const toppings = [];
     const extras = []
@@ -86,7 +89,7 @@ function currentOrderDetails(){
         extras,
         deliveryTypeChoosen,
         customerName.value,
-        document.querySelectorAll("#totalPrice")[0].textContent)
+        calculatePrice())
 
     orders.push(newOrder);
 
@@ -95,20 +98,19 @@ function currentOrderDetails(){
     "<p>Toppings: " + newOrder.toppings.join(", ") + "</p>" +
     "<p>Extras: " + newOrder.extras.join(", ") +  "</p>" +
     "<p>Delivery method: " + newOrder.deliveryType + "</p>" +
-     "<h4>Total price: " + newOrder.totalPrice + "</h4>"
-
-
-    
+     "<h4>Total price: €" + newOrder.totalPrice + "</h4>"
     orderDetails.innerHTML = paraText;             
 }
 
 
-pancakeType.addEventListener("change", calculatePrice)
+pancakeType.addEventListener("change", updatePrice)
 
 for (let checkbox of checkBoxes){
-    checkbox.addEventListener("change", calculatePrice)
+    checkbox.addEventListener("change", updatePrice)
 }
 
-delivery.addEventListener("change", calculatePrice)
+for(let delivery of deliveries){
+    delivery.addEventListener("click", updatePrice);
+}
 
 button.addEventListener("click", currentOrderDetails)
