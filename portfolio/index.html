@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="./favicon/faviconWhite32.svg">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <header>
+        <div class="logo">
+            <img src="./image/logo.svg">
+            <h1>Puja Kumari</h1>      
+        </div>
+        <nav>
+            <button class="mobile-menu">menu</button>
+            <ul>
+                <li><a href="#projects">Project</a></li>
+                <li> <a href="#aboutme">About me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#form">Contact me</a></li>
+                <li><a href="gallery/gallery.html" target="_blank">Gallery</a></li>
+                <li><a href="https://www.bc.fi/" target="_blank">More about BCH</a></li>
+            </ul>  
+        </nav>
+    </header>
+    <main>
+        <div class="hero-banner">
+            <h2>Welcome to my Portfolio</h2>
+        </div>
+        <section>
+            <h2>Project</h2>
+            <div id="projects">
+                <div class="box">
+                    <img class="image" src="./image/project_camera.jpg" alt="camera">
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>HTML, CSS, JavaScript</p>
+                    <a href="#">See more</a>
+                </div>
+
+                <div class="box">
+                    <img src="./image/project_workingOnLaptop.jpg" alt="Laptop">
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>Ux design layputs</p>
+                    <a href="#">See more</a>
+                </div>
+                
+                <div class="box">
+                    <img src="./image/project_sky.jpg" alt="sky">
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>ReactJS, NodeJS</p>
+                    <a href="#">See more</a>
+                </div>
+            </div>  
+        </section>
+        <section>
+            <h2>About Me</h2>
+            <div id="aboutme" >
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum animi neque a id, perspiciatis, distinctio eos ex corrupti dolor, hic laudantium ipsum labore minima saepe quisquam totam impedit veritatis beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum animi neque a id, perspiciatis, distinctio eos ex corrupti dolor, hic laudantium ipsum labore minima saepe quisquam totam impedit veritatis beatae.</p>
+                <img src="./image/about_me.jpg" alt="About me">  
+            </div>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <div id="skills">
+                <div class="skillBox">
+                    <img src="./image/htmlIcon.jpg" alt="htmlIcon">
+                    <h5>HTML5</h5>
+                    <div class="progress-bar">
+                        <div class="bar bar-90"></div>
+                    </div>
+                        
+                </div>
+
+                <div class="skillBox">
+                    <img src="./image/cssIcon.jpg" alt="cssIcon">
+                    <h5>CSS3</h5>
+                    <div class="progress-bar">
+                        <div class="bar bar-70"></div>
+                    </div>
+                </div>
+                
+                <div class="skillBox">
+                    <img src="./image/teachingIcon.jpg" alt="teachingIcon">
+                    <h5>Teaching</h5>
+                    <div class="progress-bar">
+                        <div class="bar bar-50"></div>
+                    </div>  
+                </div>
+
+                <div class="skillBox">
+                    <img src="./image/couchingIcon.jpg" alt="couchingIcon">
+                    <h5>Couching</h5>
+                    <div class="progress-bar">
+                        <div class="bar bar-40"></div>
+                    </div>  
+                </div>    
+            </div> 
+        </section>
+        <div class="form-container">
+            <div id="form">
+                <h4>Contact me</h4>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="yourname">Your name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="firstname" id="firstname">
+                    </div>    
+                </div>
+                
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="youremail">Your email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="youremail" id="youremail">
+                    </div>
+                    
+                </div>
+                
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="message">Message to me</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea type="text" name="message" id="message"></textarea>
+                    </div>
+                    
+                </div>
+                <div class="send-message">
+                    <button type="send message">Send Message</button>    
+                </div>
+            </div>   
+        </div>
+    </main>     
+    <footer>
+        <p>Copyright &copy my website 2024</p>
+        <button id="backTop">Back to top</button>
+    </footer>   
+    </div>  
+    <script src="main.js"></script>  
+</body>
+</html>

@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: repeat(6, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.image {
+    min-height: 150px;
+}
+
+.one {
+    background-image: url(images/flower.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right; 
+    grid-column: 1 / span 2;
+    grid-row: 1/ span 4;
+}
+
+.two {
+    background-image: url(images/mountain.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    grid-column: 3 / span 2;
+}
+
+.three {
+    background-image: url(images/lotus.jpg);
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 5;
+}
+
+.four {
+    background-image: url(images/Landscape-Color.jpg);
+    grid-column: 3 / span 2;
+    grid-row: 2/ span 3;
+}
+
+.five {
+    background-image: url(images/girl.jpg);
+    grid-row: 5;
+}
+
+.six {
+    background-image: url(images/dog.jpg);
+    grid-row: 6;
+}
+
+.seven {
+    background-image: url(images/lotus.jpg);
+    grid-row: 7;
+}
+
+.eight {
+    background-image: url(images/leaves.jpg);
+    grid-column: 2 / span 3;
+    grid-row: 5/ span 6;
+}
+
+.nine {
+    background-image: url(images/butterfly.jpg);
+    grid-column: 5 / span 2;
+    grid-row: 6 / span 2;  
+}
