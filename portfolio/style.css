@@ -317,6 +317,21 @@ footer {
         top: 100px;
         left: 0;
         width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        transform: translateX(100%);
+        opacity: 0; /* Hidden initially */
+        visibility: hidden; /* Prevent layout shift */
+        transform-origin:top;
+        transition: max-height 0.3s ease-out, transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0s 0.5s;
+    }
+
+    nav ul.responsive.open {
+        max-height: 540px;
+        transform: translateX(0); /* Or enough to fit your menu content */
+        opacity: 1; /* Fade in */
+        visibility: visible; /* Make it visible */
+        transition: max-height 0.5s ease-out, transform 0.3s ease-out, opacity 0.5s ease-out;
     }
 
     ul.responsive li {
