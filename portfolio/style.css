@@ -212,9 +212,10 @@ section:nth-child(odd) {
 
 /* Form start */
 
-.form-container {
+#form-container {
     background-color: dimgray; 
     padding: 20px; 
+    scroll-margin-top: 100px;
 }
 
 #form h4 {
