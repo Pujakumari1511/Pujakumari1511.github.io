@@ -42,7 +42,7 @@ body {
 }
 
 .four {
-    background-image: url(images/Landscape-Color.jpg);
+    background-image: url(images/monsteraMulti.jpg);
     grid-column: 3 / span 2;
     grid-row: 2/ span 3;
 }
