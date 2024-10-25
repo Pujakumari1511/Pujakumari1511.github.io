@@ -22,7 +22,6 @@ body {
 
 .one {
     background-image: url(images/lightGreenLeaves.jpg);
-    
     grid-column: 1 / span 2;
     grid-row: 1/ span 4;
 }
@@ -53,7 +52,7 @@ body {
 }
 
 .six {
-    background-image: url(images/multiLeaves.jpg);
+    background-image: url(images/monsteraLeaves.jpg);
     grid-row: 6;
 }
 
@@ -70,7 +69,6 @@ body {
 
 .nine {
     background-image: url(images/forestautum-leaves.jpg);
-  
     grid-column: 5 / span 2;
     grid-row: 6 / span 2;  
 }
