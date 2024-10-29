@@ -286,8 +286,12 @@ footer {
     position: fixed;
     right: 2rem;
     bottom: 2rem;
-    width: 100px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
+}
+
+#backTop img {
+    padding: 3px;
 }
 
 .mobile-menu {
