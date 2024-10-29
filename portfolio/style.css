@@ -65,6 +65,7 @@ nav ul {
     top:40%;
     left: 50%;
     transform: translate(-50%, -50%); 
+    text-align: center;
 }
 
 /* Hero banner end */
@@ -96,7 +97,7 @@ section:nth-child(odd) {
     border: black solid 1px;
     width: 25%;
     height: 100%;
-    font-size: 1.4vw;
+    font-size: 12px;
     min-width: 180px;
 }
 
@@ -292,8 +293,8 @@ footer {
 .mobile-menu {
     position: fixed;
     top: 23px;
-    right: 2rem;
-    width: 100px;
+    right: 1rem;
+    width: 70px;
     height: 40px;
 }
 
@@ -302,6 +303,11 @@ footer {
 
 /* Mobile */
 @media screen and (max-width:600px) {
+
+    .logo img {
+        width: 35px;
+    }
+
     .mobile-menu {
         display: block;
     }
@@ -352,5 +358,9 @@ footer {
 
     .hero-banner h2 {
         font-size: 20px;
+    }
+
+    #backTop {
+        right: 1rem;
     }
 }

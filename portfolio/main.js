@@ -12,13 +12,21 @@ window.onscroll = function (){scrollFunction()};
 
 function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        //document.querySelector('header').style.backdropFilter = "blur(10px)";
-        document.querySelector('header .logo h1').style.fontSize = "22px";
+        document.querySelector('header').style.backdropFilter = "blur(10px)";
+        if (window.matchMedia("(max-width: 400px)").matches){
+            document.querySelector('header .logo h1').style.fontSize = "18px";
+        } else {
+            document.querySelector('header .logo h1').style.fontSize = "22px";
+        } 
         document.querySelector('header').style.backgroundColor = "#05590c5c";
         document.querySelector('header').style.height = "100px";
     } else {
         document.querySelector('header').style.backdropFilter = "none";
-        document.querySelector('header .logo h1').style.fontSize = "32px";
+        if (window.matchMedia("(max-width: 400px)").matches){
+            document.querySelector('header .logo h1').style.fontSize = "22px";
+        } else {
+            document.querySelector('header .logo h1').style.fontSize = "32px";
+        } 
         document.querySelector('header').style.backgroundColor = "transparent";
         document.querySelector('header').style.height = "100px";
     }
